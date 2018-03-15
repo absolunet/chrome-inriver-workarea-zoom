@@ -3,7 +3,7 @@
 
   "name": "inRiver Workarea Zoom",
   "description": "Zoom entity cards in the workarea.",
-  "version": "0.1",
+  "version": "0.2",
 
   "background": {
     "scripts": ["event.js"],

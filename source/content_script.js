@@ -26,7 +26,7 @@ var observerWorkarea = new MutationObserver(function(mutations) {
     if (mutation.type == 'childList') {
       if (mutation.addedNodes.length >= 1) {
         if (mutation.addedNodes[0].nodeName == 'DIV' && 
-           (mutation.addedNodes[0].className == 'card-section-wrap' || mutation.addedNodes[0].className == '')) {
+           (mutation.addedNodes[0].className == 'card-section-wrap' || mutation.addedNodes[0].className == 'entity-card-view' || mutation.addedNodes[0].className == '')) {
           replaceImageUrls(mutation.addedNodes[0]);
         }
       }
@@ -73,10 +73,18 @@ if(!$("#zoomstyle").length) {
   
   var observerConfig = { childList: true, subtree: true };
   
+  // Version of iPMC prior to update 2018-10-16 and for 6.3 on-premise
   if($('#workarea-container').length > 0) {
     replaceImageUrls('#workarea-container');
       
     var targetNode = document.getElementById('workarea-container');
+    observerWorkarea.observe(targetNode, observerConfig);
+  }
+  // Update of iPMC (2018-10-17)
+  else if($('#workarea-root-container').length > 0) {
+    replaceImageUrls('#workarea-root-container');
+      
+    var targetNode = document.getElementById('workarea-root-container');
     observerWorkarea.observe(targetNode, observerConfig);
   }
   else if($('#items-list-wrap').length > 0) {

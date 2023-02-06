@@ -1,3 +1,7 @@
+# PLEASE NOTE, THIS PROJECT HAS MOVED HERE: https://github.com/valtech-commerce/chrome-inriver-workarea-zoom
+
+* * *
+
 # Chrome extension: inRiver Workarea Zoom
 
 ## Installation
